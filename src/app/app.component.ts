@@ -1,10 +1,21 @@
-import { Component } from '@angular/core';
+import {
+  Component, Inject
+} from '@angular/core'
+
+import { Observable } from 'rxjs'
+import { stateAndDispatcher } from './_state'
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  template: `
+    <h1>
+      {{title}}
+    </h1>
+    <a-spotify></a-spotify>
+  `,
+  providers: stateAndDispatcher,
 })
+
 export class AppComponent {
-  title = 'app works!';
+  title = 'app works!'
 }
